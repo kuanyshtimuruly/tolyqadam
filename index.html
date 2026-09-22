@@ -987,23 +987,8 @@
       }
       .speaker-group + .speaker-group {
         margin-top: 72px;
-      }
-      .speaker-group-heading {
-        display: flex;
-        align-items: baseline;
-        gap: 18px;
-        margin-bottom: 24px;
-        border-bottom: 1px solid #d9d1c4;
-        padding-bottom: 14px;
-      }
-      .speaker-group-heading h3 {
-        margin: 0;
-        font-size: clamp(26px, 3vw, 38px);
-      }
-      .speaker-count {
-        margin-left: auto;
-        color: #566e7e;
-        font-size: 15px;
+        border-top: 1px solid #d9d1c4;
+        padding-top: 48px;
       }
       .speakers-grid {
         display: grid;
@@ -1124,9 +1109,6 @@
           grid-column: 2;
           align-self: start;
         }
-        .speaker-group-heading {
-          flex-wrap: wrap;
-        }
         header {
           display: flex;
           flex-direction: column;
@@ -1219,9 +1201,7 @@
               Наследие Великой степи и современные решения
             </p>
             <div class="hero-actions">
-              <a
-                class="cta"
-                href="#"
+              <a class="cta" href="#"
                 ><span data-i18n="t6">Зарегистрироваться ↗</span></a
               >
               <a class="cta cta-outline" href="#program"
@@ -1272,9 +1252,7 @@
             <h3 data-i18n="t12">
               Как университет может стать средой становления целостной личности?
             </h3>
-            <a
-              class="cta"
-              href="#"
+            <a class="cta" href="#"
               ><span data-i18n="t13">Зарегистрироваться ↗</span></a
             >
           </div>
@@ -1335,14 +1313,10 @@
         >
         <h2 data-i18n="t15">Участники интеллектуального диалога</h2>
         <p class="speakers-intro" data-i18n="speakersIntro">
-          Два круга участников — разные исследовательские и образовательные
-          взгляды на человека, культуру и университет будущего.
+          Исследователи и преподаватели объединяются для диалога о человеке,
+          культуре и университете будущего.
         </p>
-        <div class="speaker-group" aria-labelledby="group-1-title">
-          <div class="speaker-group-heading">
-            <h3 id="group-1-title" data-i18n="group1">Категория 1</h3>
-            <span class="speaker-count">01 / 02</span>
-          </div>
+        <div class="speaker-group">
           <div class="speakers-grid">
             <article class="speaker">
               <img
@@ -1438,11 +1412,7 @@
             </article>
           </div>
         </div>
-        <div class="speaker-group" aria-labelledby="group-2-title">
-          <div class="speaker-group-heading">
-            <h3 id="group-2-title" data-i18n="group2">Категория 2</h3>
-            <span class="speaker-count">02 / 02</span>
-          </div>
+        <div class="speaker-group">
           <div class="speakers-grid">
             <article class="speaker">
               <img
@@ -1518,21 +1488,16 @@
         <h2 data-i18n="t34">Два дня диалога</h2>
         <div class="program-summary">
           <p data-i18n="programDates">30 и 31 октября 2026</p>
-          <a
-            class="cta"
-            href="#program"
+          <a class="cta" href="#program"
             ><span data-i18n="programView"
               >Смотреть программу двух дней ↗</span
             ></a
           >
         </div>
         <div class="actions">
-          <a
-            class="cta"
-            href="#"
+          <a class="cta" href="#"
             ><span data-i18n="t41">Зарегистрироваться ↗</span></a
-          ><a
-            href="#"
+          ><a href="#"
             ><span data-i18n="t42">Концепция конференции · PDF ↗</span></a
           >
         </div>
@@ -1575,13 +1540,9 @@
               Каким должен быть университет, который развивает не только
               профессионала, но и человека?
             </h3>
-            <a
-              class="cta"
-              href="#"
+            <a class="cta" href="#"
               ><span data-i18n="t49">Зарегистрироваться ↗</span></a
-            ><br /><a
-              class="archive"
-              href="#"
+            ><br /><a class="archive" href="#"
               ><span data-i18n="t50">Архив конференции 2025 ↗</span></a
             >
           </div>
@@ -1857,9 +1818,9 @@
           en: "The people shaping the dialogue",
         },
         speakersIntro: {
-          ru: "Два круга участников — разные исследовательские и образовательные взгляды на человека, культуру и университет будущего.",
-          kz: "Екі топ қатысушысы — адамға, мәдениетке және болашақ университетіне әртүрлі зерттеу және білім беру көзқарастары.",
-          en: "Two groups of participants bring different perspectives on people, culture and the university of the future.",
+          ru: "Исследователи и преподаватели объединяются для диалога о человеке, культуре и университете будущего.",
+          kz: "Зерттеушілер мен оқытушылар адам, мәдениет және болашақ университеті туралы диалогқа жиналады.",
+          en: "Researchers and educators come together to discuss people, culture and the university of the future.",
         },
         momentsKicker: {
           ru: "Атмосфера AlmaU",
@@ -1881,7 +1842,6 @@
           kz: "AlmaU конференциясындағы диалог",
           en: "Dialogue at an AlmaU conference",
         },
-        group1: { ru: "Категория 1", kz: "1-санат", en: "Category 1" },
         speaker1_1: {
           ru: "Историк Центральной Евразии и тюркского мира",
           kz: "Орталық Еуразия мен түркі әлемінің тарихшысы",
@@ -1917,7 +1877,6 @@
           kz: "Көшпелі өркениет пен мәдени мұраны зерттеуші",
           en: "Researcher of nomadic civilization and cultural heritage",
         },
-        group2: { ru: "Категория 2", kz: "2-санат", en: "Category 2" },
         speaker2_1: {
           ru: "Профессор философии, Aix-Marseille Université",
           kz: "Философия профессоры, Aix-Marseille Université",
