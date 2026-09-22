@@ -141,9 +141,21 @@ nav a { color: var(--cream); }
 #contacts > h2 { max-width: 1100px; }
 #contacts .split { gap: clamp(40px, 6vw, 100px); }
 #contacts h3 { font-size: clamp(25px, 3vw, 40px); }
-#contacts .contact { padding: 32px; border: 1px solid rgba(251,250,247,.22); border-radius: 12px; }
-#contacts .contact-row { border-color: rgba(251,250,247,.2); }
-#contacts .contact-row, #contacts .contact-row * { color: var(--cream); }
+#contacts .contact { padding: 28px 32px 12px; border: 1px solid rgba(251,250,247,.22); border-radius: 12px; }
+#contacts .contact h3 { margin: 0 0 10px; }
+/* One row per channel: outlined icon disc, channel name, then the value. The
+   whole row is the link; hovering fills the disc instead of underlining it all. */
+#contacts .contact-row { display: grid; grid-template-columns: 46px minmax(0, 1fr); column-gap: 18px; align-items: center; margin: 0; padding: 16px 0; font-size: inherit; color: var(--cream); }
+#contacts .contact-row + .contact-row { border-top: 1px solid rgba(251,250,247,.14); }
+#contacts .contact-row:hover { text-decoration: none; }
+#contacts .contact-row .icon { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; border: 1px solid rgba(251,250,247,.3); color: var(--accent); transition: background .2s ease, border-color .2s ease, color .2s ease; }
+#contacts .contact-row .icon svg { width: 22px; height: 22px; }
+#contacts .contact-row:hover .icon { background: var(--accent); border-color: var(--accent); color: var(--stage); }
+#contacts .contact-row small { display: block; margin-bottom: 3px; font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(251,250,247,.58); }
+#contacts .contact-row strong { display: block; font-size: clamp(18px, 1.55vw, 22px); font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; }
+#contacts .contact-row:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+#venue h3 .icon { display: inline-grid; place-items: center; width: 40px; height: 40px; margin-right: 4px; border-radius: 50%; background: var(--accent); color: var(--stage); }
+#venue h3 .icon svg { width: 22px; height: 22px; }
 footer { background: var(--stage); color: #c1d0d6; border-top: 1px solid rgba(251,250,247,.2); }
 
 @media (max-width: 1050px) {
