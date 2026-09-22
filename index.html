@@ -1304,7 +1304,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="redesign.css?v=6" />
+    <link rel="stylesheet" href="redesign.css?v=7" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -1552,14 +1552,7 @@
         </div>
       </section>
       <section class="page" id="speakers">
-        <span class="section-kicker" data-i18n="speakersLead"
-          >Люди, которые создают диалог</span
-        >
-        <h2 data-i18n="t15">Участники интеллектуального диалога</h2>
-        <p class="speakers-intro" data-i18n="speakersIntro">
-          Исследователи и преподаватели объединяются для диалога о человеке,
-          культуре и университете будущего.
-        </p>
+        <h2 data-i18n="speakersLead">Люди, которые создают диалог</h2>
         <div class="speaker-group">
           <div class="speakers-grid">
             <article class="speaker">
@@ -1935,11 +1928,6 @@
           kz: "AlmaU университетінің Tolyq Adam білім беру бағдарламасы THE Awards Asia 2026 байқауының «Жылдың оқыту және білім беру стратегиясы» номинациясында жеңімпаз атанды.",
           en: "AlmaU’s Tolyq Adam educational programme won THE Awards Asia 2026 in the Teaching and Learning Strategy of the Year category.",
         },
-        t15: {
-          ru: "Участники интеллектуального диалога",
-          kz: "Зияткерлік диалог қатысушылары",
-          en: "Participants in the intellectual dialogue",
-        },
         t16: {
           ru: "Почётный профессор антропологии, Macalester College, США",
           kz: "Антропологияның құрметті профессоры, Macalester College, АҚШ",
@@ -2070,11 +2058,6 @@
           ru: "Люди, которые создают диалог",
           kz: "Диалог құратын тұлғалар",
           en: "The people shaping the dialogue",
-        },
-        speakersIntro: {
-          ru: "Исследователи и преподаватели объединяются для диалога о человеке, культуре и университете будущего.",
-          kz: "Зерттеушілер мен оқытушылар адам, мәдениет және болашақ университеті туралы диалогқа жиналады.",
-          en: "Researchers and educators come together to discuss people, culture and the university of the future.",
         },
         momentsKicker: {
           ru: "Атмосфера AlmaU",
@@ -2255,7 +2238,7 @@
 
       if (!reducedMotion.matches && "IntersectionObserver" in window) {
         const revealTargets = document.querySelectorAll(
-          "#about > h2, #about .split > *, #moments .section-kicker, #moments h2, #moments figure, #moments .concept, #award .award-row > *, #speakers > .section-kicker, #speakers > h2, #speakers > .speakers-intro, #speakers .speaker, #venue > *, #contacts > *",
+          "#about > h2, #about .split > *, #moments .section-kicker, #moments h2, #moments figure, #moments .concept, #award .award-row > *, #speakers > h2, #speakers .speaker, #venue > *, #contacts > *",
         );
         const observer = new IntersectionObserver(
           (entries) => {
