@@ -969,7 +969,7 @@
       }
       .moments-grid {
         display: grid;
-        grid-template-columns: 1.35fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 20px;
       }
       .moments figure {
@@ -1432,6 +1432,7 @@
                 src="assets/events/almau-awards-gathering.jpg"
                 alt="Участники встречи AlmaU и THE Awards Asia"
                 decoding="async"
+                loading="lazy"
               />
             </div>
             <figcaption data-i18n="momentsGathering">
@@ -1444,10 +1445,37 @@
                 src="assets/events/almau-conference.jpg"
                 alt="Участники конференции в AlmaU"
                 decoding="async"
+                loading="lazy"
               />
             </div>
             <figcaption data-i18n="momentsConference">
               Диалог на конференции AlmaU
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="photo-frame">
+              <img
+                src="IMG_5416.JPG"
+                alt="Панельная дискуссия на международной конференции AlmaU"
+                decoding="async"
+                loading="lazy"
+              />
+            </div>
+            <figcaption data-i18n="momentsPanel">
+              Международная дискуссия в AlmaU
+            </figcaption>
+          </figure>
+          <figure>
+            <div class="photo-frame">
+              <img
+                src="IMG_1937.JPG"
+                alt="Участники слушают панельную дискуссию в AlmaU"
+                decoding="async"
+                loading="lazy"
+              />
+            </div>
+            <figcaption data-i18n="momentsAudience">
+              Участники конференции AlmaU
             </figcaption>
           </figure>
         </div>
@@ -1990,6 +2018,16 @@
           ru: "Диалог на конференции AlmaU",
           kz: "AlmaU конференциясындағы диалог",
           en: "Dialogue at an AlmaU conference",
+        },
+        momentsPanel: {
+          ru: "Международная дискуссия в AlmaU",
+          kz: "AlmaU-дағы халықаралық пікірталас",
+          en: "International discussion at AlmaU",
+        },
+        momentsAudience: {
+          ru: "Участники конференции AlmaU",
+          kz: "AlmaU конференциясының қатысушылары",
+          en: "Participants at the AlmaU conference",
         },
         speaker1_1: {
           ru: "Историк Центральной Евразии и тюркского мира",
