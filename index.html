@@ -1339,7 +1339,13 @@
           </div>
           <div class="header-controls">
             <nav id="site-nav" aria-label="Навигация">
-              <a href="#about"><span data-i18n="t0">О нас</span></a
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdq1VxXenqmivIAwZ9aHT-r1INmW1tBQj0fXMHJwB0aBHKF8g/viewform?hl=ru"
+                data-register
+                target="_blank"
+                rel="noopener"
+                ><span data-i18n="navRegister">Регистрация</span></a
+              ><a href="#about"><span data-i18n="t0">О нас</span></a
               ><a href="#infoletter"
                 ><span data-i18n="navInfoLetter">Инфописьмо</span></a
               ><a href="#speakers"><span data-i18n="t1">Спикеры</span></a
@@ -1383,8 +1389,11 @@
             <div class="hero-actions">
               <a
                 class="cta"
-                href="mailto:icth@almau.edu.kz?subject=TOLYQ%20ADAM%202026%20participation"
-                ><span data-i18n="t6">Связаться с оргкомитетом ↗</span></a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdq1VxXenqmivIAwZ9aHT-r1INmW1tBQj0fXMHJwB0aBHKF8g/viewform?hl=ru"
+                data-register
+                target="_blank"
+                rel="noopener"
+                ><span data-i18n="t6">Зарегистрироваться ↗</span></a
               >
               <a
                 class="cta cta-outline"
@@ -1940,11 +1949,7 @@
           kz: "Ұлы дала мұрасы және заманауи шешімдер",
           en: "The Heritage of the Great Steppe and Contemporary Solutions",
         },
-        t6: {
-          ru: "Связаться с оргкомитетом ↗",
-          kz: "Ұйымдастыру комитетіне жазу ↗",
-          en: "Contact the organising team ↗",
-        },
+        t6: { ru: "Зарегистрироваться ↗", kz: "Тіркелу ↗", en: "Register ↗" },
         t7: {
           ru: "30–31 октября 2026 · Алматы, Казахстан",
           kz: "2026 жылғы 30–31 қазан · Алматы, Қазақстан",
@@ -2226,10 +2231,16 @@
           kz: "Ақпараттық хат",
           en: "Info letter",
         },
+        navRegister: { ru: "Регистрация", kz: "Тіркелу", en: "Registration" },
       };
       function setLanguage(lang, updateURL = true) {
         if (!["ru", "kz", "en"].includes(lang)) lang = "ru";
         document.documentElement.lang = lang === "kz" ? "kk" : lang;
+        document.querySelectorAll("a[data-register]").forEach((a) => {
+          const url = new URL(a.href);
+          url.searchParams.set("hl", lang === "kz" ? "kk" : lang);
+          a.href = url;
+        });
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const value = translations[el.dataset.i18n][lang];
           if (el.hasAttribute("data-i18n-html")) el.innerHTML = value;
