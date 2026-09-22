@@ -145,13 +145,22 @@
         height: auto;
         transform: translateY(-8%);
       }
+      .header-controls {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 12px;
+      }
       nav {
         display: flex;
         gap: 24px;
         align-items: center;
-        margin-left: auto;
+        justify-content: flex-end;
+        flex-wrap: wrap;
         font-size: 18px;
-        white-space: nowrap;
+        text-align: right;
       }
       .languages {
         display: flex;
@@ -534,6 +543,12 @@
         }
         nav {
           margin-left: 0;
+        }
+        .header-controls {
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
         }
         .hero {
           gap: 30px;
@@ -1133,7 +1148,15 @@
           white-space: normal;
         }
         .languages {
-          align-self: flex-start;
+          align-self: auto;
+        }
+        .header-controls {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        nav {
+          text-align: left;
+          justify-content: flex-start;
         }
         .hero h1 {
           font-size: clamp(55px, 15vw, 76px);
@@ -1309,19 +1332,21 @@
               />
             </div>
           </div>
-          <nav aria-label="Навигация">
-            <a href="#about"><span data-i18n="t0">О нас</span></a
-            ><a href="#speakers"><span data-i18n="t1">Спикеры</span></a
-            ><a href="#program"><span data-i18n="t2">Программа</span></a
-            ><a href="#contacts"><span data-i18n="t3">Контакты</span></a>
-          </nav>
-          <div class="languages" role="group" aria-label="Language">
-            <button type="button" data-lang="en" aria-pressed="false">EN</button
-            ><button type="button" data-lang="kz" aria-pressed="false">
-              KZ</button
-            ><button type="button" data-lang="ru" aria-pressed="true">
-              RU
-            </button>
+          <div class="header-controls">
+            <nav aria-label="Навигация">
+              <a href="#about"><span data-i18n="t0">О нас</span></a
+              ><a href="#speakers"><span data-i18n="t1">Спикеры</span></a
+              ><a href="#program"><span data-i18n="t2">Программа</span></a
+              ><a href="#contacts"><span data-i18n="t3">Контакты</span></a>
+            </nav>
+            <div class="languages" role="group" aria-label="Language">
+              <button type="button" data-lang="en" aria-pressed="false">EN</button
+              ><button type="button" data-lang="kz" aria-pressed="false">
+                KZ</button
+              ><button type="button" data-lang="ru" aria-pressed="true">
+                RU
+              </button>
+            </div>
           </div>
         </header>
         <div class="hero">
