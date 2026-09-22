@@ -815,6 +815,352 @@
           print-color-adjust: exact;
         }
       }
+      /* 2026 refresh: preserve the AlmaU palette while giving the page room to breathe. */
+      body {
+        background: var(--paper);
+      }
+      .page {
+        width: min(100%, 1440px);
+        padding: 76px clamp(24px, 6vw, 88px);
+      }
+      .page:first-child {
+        padding-top: 24px;
+        padding-bottom: 88px;
+      }
+      h2 {
+        font-size: clamp(36px, 4vw, 62px);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+      }
+      .cta {
+        border-radius: 999px;
+        padding: 17px 28px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .eyebrow,
+      .hero .subtitle,
+      .art .year,
+      .art small,
+      .languages button,
+      .program-link {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin: 24px 0 18px;
+      }
+      .hero-actions .cta {
+        margin: 0;
+      }
+      .cta-outline {
+        border: 1.5px solid var(--wine);
+        background: transparent;
+        color: var(--wine);
+      }
+      .cta-outline:hover {
+        background: #f1eee7;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        align-items: center;
+        gap: clamp(24px, 4vw, 64px);
+      }
+      .hero h1 {
+        font-size: clamp(72px, 7vw, 112px);
+        margin-bottom: 30px;
+      }
+      .hero h3,
+      html[lang="ru"] .hero h3 {
+        font-size: clamp(25px, 2.5vw, 38px);
+        line-height: 1.15;
+      }
+      .hero-visual {
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+      }
+      .art {
+        height: min(55vw, 610px);
+        min-height: 500px;
+        overflow: hidden;
+        border-radius: 30px;
+        box-shadow: 0 24px 60px rgba(17, 53, 75, 0.12);
+      }
+      .art .abai {
+        left: -90px;
+        top: -155px;
+      }
+      .art .gold {
+        right: -65px;
+      }
+      .art small {
+        bottom: 25px;
+      }
+      #about,
+      #program {
+        background: #f1eee7;
+      }
+      .program-summary {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px 34px;
+        border-top: 1px solid #d9d1c4;
+        padding-top: 26px;
+      }
+      .program-summary p {
+        margin: 0;
+        font-size: clamp(22px, 2.5vw, 31px);
+        font-weight: 700;
+      }
+      .program-summary .cta {
+        margin: 0;
+      }
+      .quote {
+        border-radius: 24px;
+        background: var(--paper);
+      }
+      .award-image,
+      .venue-photo {
+        border-radius: 24px;
+      }
+      .venue-photo {
+        border: 0;
+      }
+      .moments {
+        padding-top: 44px;
+        padding-bottom: 80px;
+      }
+      .section-kicker,
+      .group-label {
+        display: block;
+        color: var(--wine);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .moments h2 {
+        max-width: 800px;
+        margin: 16px 0 30px;
+      }
+      .moments-grid {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 20px;
+      }
+      .moments figure {
+        margin: 0;
+      }
+      .moments img {
+        width: 100%;
+        height: clamp(290px, 33vw, 460px);
+        border-radius: 24px;
+        object-fit: cover;
+      }
+      .moments figure:first-child img {
+        object-position: center center;
+      }
+      .moments figcaption {
+        margin-top: 12px;
+        color: #566e7e;
+        font-size: 15px;
+      }
+      #speakers {
+        padding-top: 88px;
+        padding-bottom: 100px;
+      }
+      #speakers > h2 {
+        max-width: 820px;
+        margin: 15px 0 16px;
+      }
+      .speakers-intro {
+        max-width: 720px;
+        margin-bottom: 60px;
+        color: #566e7e;
+      }
+      .speaker-group + .speaker-group {
+        margin-top: 72px;
+      }
+      .speaker-group-heading {
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid #d9d1c4;
+        padding-bottom: 14px;
+      }
+      .speaker-group-heading h3 {
+        margin: 0;
+        font-size: clamp(26px, 3vw, 38px);
+      }
+      .speaker-count {
+        margin-left: auto;
+        color: #566e7e;
+        font-size: 15px;
+      }
+      .speakers-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .speaker-group:last-child .speakers-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+      .speaker {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 0;
+        border: 1px solid #e3ded3;
+        border-radius: 22px;
+        padding: 28px 23px 26px;
+        background: #fff;
+      }
+      .speaker img {
+        width: 152px;
+        height: 152px;
+        max-width: 100%;
+        flex: none;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 25%;
+        background: #eceae4;
+        border: 5px solid #f1eee7;
+        margin-bottom: 23px;
+      }
+      .speaker h4 {
+        margin: 0 0 9px;
+        font:
+          600 clamp(22px, 2vw, 28px)/1.12 Arial,
+          Helvetica,
+          sans-serif;
+      }
+      .speaker .role {
+        margin: 0;
+        color: #566e7e;
+        font-size: 15px;
+        line-height: 1.45;
+      }
+      @media (max-width: 1100px) {
+        .speakers-grid,
+        .speaker-group:last-child .speakers-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .art .abai {
+          left: -130px;
+        }
+      }
+      @media (max-width: 800px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .art {
+          height: 570px;
+          min-height: 0;
+        }
+        .moments-grid {
+          grid-template-columns: 1fr;
+        }
+        .moments img {
+          height: auto;
+          aspect-ratio: 1.6;
+        }
+        .speakers-grid,
+        .speaker-group:last-child .speakers-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 540px) {
+        .page,
+        .page:first-child {
+          padding: 44px 22px;
+        }
+        .page:first-child {
+          padding-top: 20px;
+        }
+        .hero h1 {
+          font-size: clamp(64px, 17vw, 84px);
+        }
+        .hero h3,
+        html[lang="ru"] .hero h3 {
+          font-size: 27px;
+        }
+        .art {
+          height: 480px;
+        }
+        .art .abai {
+          left: -165px;
+          top: -195px;
+        }
+        .speakers-grid,
+        .speaker-group:last-child .speakers-grid {
+          grid-template-columns: 1fr;
+        }
+        .speaker {
+          display: grid;
+          grid-template-columns: 108px minmax(0, 1fr);
+          gap: 18px;
+          align-items: center;
+          padding: 20px;
+        }
+        .speaker img {
+          width: 108px;
+          height: 108px;
+          margin: 0;
+          grid-row: 1 / span 2;
+        }
+        .speaker h4 {
+          font-size: 24px;
+          align-self: end;
+        }
+        .speaker .role {
+          grid-column: 2;
+          align-self: start;
+        }
+        .speaker-group-heading {
+          flex-wrap: wrap;
+        }
+        header {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .logos {
+          display: grid;
+          grid-template-columns: 70px 70px minmax(0, 1fr);
+          gap: 12px;
+          width: 100%;
+        }
+        .logos .signature {
+          width: 100%;
+          height: 50px;
+          border-radius: 14px;
+        }
+        nav {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px 20px;
+          margin: 0;
+          white-space: normal;
+        }
+        .languages {
+          align-self: flex-start;
+        }
+        .hero h1 {
+          font-size: clamp(55px, 15vw, 76px);
+        }
+        .hero-actions .cta {
+          width: 100%;
+          text-align: center;
+        }
+      }
     </style>
   </head>
   <body>
@@ -872,12 +1218,17 @@
             <p data-i18n="t5" class="subtitle">
               Наследие Великой степи и современные решения
             </p>
-            <a
-              class="cta"
-              data-external-lang
-              href="https://almau-tolyq-adam-2026.cool-fir-0718.chatgpt.site/?lang=ru#registration"
-              ><span data-i18n="t6">Зарегистрироваться ↗</span></a
-            >
+            <div class="hero-actions">
+              <a
+                class="cta"
+                data-external-lang
+                href="https://almau-tolyq-adam-2026.cool-fir-0718.chatgpt.site/?lang=ru#registration"
+                ><span data-i18n="t6">Зарегистрироваться ↗</span></a
+              >
+              <a class="cta cta-outline" href="#program"
+                ><span data-i18n="programButton">Программа двух дней ↓</span></a
+              >
+            </div>
             <p data-i18n="t7" class="date">
               30–31 октября 2026 · Алматы, Казахстан
             </p>
@@ -931,6 +1282,34 @@
           </div>
         </div>
       </section>
+      <section class="page moments" id="moments">
+        <span class="section-kicker" data-i18n="momentsKicker"
+          >Атмосфера AlmaU</span
+        >
+        <h2 data-i18n="momentsTitle">Место, где встречаются люди и идеи</h2>
+        <div class="moments-grid">
+          <figure>
+            <img
+              src="assets/events/almau-awards-gathering.jpg"
+              alt="Участники встречи AlmaU и THE Awards Asia"
+              decoding="async"
+            />
+            <figcaption data-i18n="momentsGathering">
+              Участники встречи AlmaU и THE Awards Asia
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/events/almau-conference.jpg"
+              alt="Участники конференции в AlmaU"
+              decoding="async"
+            />
+            <figcaption data-i18n="momentsConference">
+              Диалог на конференции AlmaU
+            </figcaption>
+          </figure>
+        </div>
+      </section>
       <section class="page" id="award">
         <div class="split award-row">
           <div>
@@ -953,214 +1332,201 @@
         </div>
       </section>
       <section class="page" id="speakers">
+        <span class="section-kicker" data-i18n="speakersLead"
+          >Люди, которые создают диалог</span
+        >
         <h2 data-i18n="t15">Участники интеллектуального диалога</h2>
-        <div class="grid three speakers">
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Jack Weatherford
-              </h3>
-              <p data-i18n="t16" class="role">
-                Почётный профессор антропологии, Macalester College, США
-              </p>
-              <p data-i18n="t17">
-                Вклад кочевых цивилизаций в мировую историю: стратегическое
-                мышление и адаптивность
-              </p>
-            </div>
-            <img
-              src="Jack_Weatherford_2022.jpg"
-              alt="Jack Weatherford"
-              class=""
-              style="object-position: center top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Joo-Yup Lee
-              </h3>
-              <p data-i18n="t18" class="role">
-                Историк, исследователь Центральной Евразии и тюркского мира
-              </p>
-              <p data-i18n="t19">
-                Professor of Central Eurasian History, University of Toronto
-                (Canada)
-              </p>
-            </div>
-            <img
-              src="d12c5756-c301-445f-a2c7-17ce6d26ab0e.jpg"
-              alt="Joo-Yup Lee"
-              class=""
-              style="object-position: center top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Tomohiko Uyama
-              </h3>
-              <p data-i18n="t20" class="role">
-                Профессор, Slavic-Eurasian Research Center, Hokkaido University,
-                Япония
-              </p>
-              <p data-i18n="t21">
-                Движение Алаш и казахская модернизация начала XX века
-              </p>
-            </div>
-            <img
-              src="images.jpeg"
-              alt="Tomohiko Uyama"
-              class=""
-              style="object-position: right top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Erica Kaufman
-              </h3>
-              <p data-i18n="t22" class="role">
-                Представитель Bard College, США
-              </p>
-              <p data-i18n="t23">
-                Опыт реализации образовательной модели Liberal Arts
-              </p>
-            </div>
-            <img
-              src="erica%20kaufman%20headshot.jpg"
-              alt="Erica Kaufman"
-              class=""
-              style="object-position: center top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Daniel T.L. Shek
-              </h3>
-              <p data-i18n="t24" class="role">
-                Профессор, The Hong Kong Polytechnic University
-              </p>
-              <p data-i18n="t25">
-                Целостное образование и благополучие студентов
-              </p>
-            </div>
-            <img
-              src="images-2.jpeg"
-              alt="Daniel T.L. Shek"
-              class=""
-              style="object-position: center top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Зира Наурызбаева
-              </h3>
-              <p data-i18n="t26" class="role">
-                Культуролог, профессор практики, AlmaU
-              </p>
-              <p data-i18n="t27">
-                Мировоззрение Великой степи и культурная идентичность
-              </p>
-            </div>
-            <img
-              src="images-3.jpeg"
-              alt="Зира Наурызбаева"
-              class=""
-              style="object-position: center top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Pascal Taranto
-              </h3>
-              <p data-i18n="t28" class="role">
-                профессор философии Aix-Marseille Université
-              </p>
-              <p data-i18n="t29">
-                директор исследовательского Центра Centre GillesGaston Granger,
-                UMR 7304
-              </p>
-            </div>
-            <img
-              src="WhatsApp%20Image%202026-09-20%20at%2011.46.21.jpeg"
-              alt="Pascal Taranto"
-              class=""
-              style="object-position: center top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Catherine Poujol
-              </h3>
-              <p data-i18n="t30" class="role">
-                французский историк, профессор INALCO
-              </p>
-              <p data-i18n="t31">специалист по истории Центральной Азии</p>
-            </div>
-            <img
-              src="POUJOL%282%29.jpg"
-              alt="Catherine Poujol"
-              class=""
-              style="object-position: 75% top"
-              decoding="async"
-            />
-          </article>
-          <article class="speaker">
-            <div>
-              <h3 class="speaker-name notranslate" translate="no">
-                Айнаш Мустаяпова
-              </h3>
-              <p data-i18n="t32" class="role">
-                Исследователь кочевой цивилизации, культурного наследия и
-                мировоззрения Великой степи
-              </p>
-              <p data-i18n="t33">
-                Автор труда: “Nomads: In Search of the Lost Path” (Springer)
-              </p>
-            </div>
-            <img
-              src="2-26-1536x932.jpg"
-              alt="Айнаш Мустаяпова"
-              class=""
-              style="object-position: center top"
-              decoding="async"
-            />
-          </article>
+        <p class="speakers-intro" data-i18n="speakersIntro">
+          Два круга участников — разные исследовательские и образовательные
+          взгляды на человека, культуру и университет будущего.
+        </p>
+        <div class="speaker-group" aria-labelledby="group-1-title">
+          <div class="speaker-group-heading">
+            <h3 id="group-1-title" data-i18n="group1">Категория 1</h3>
+            <span class="speaker-count">01 / 02</span>
+          </div>
+          <div class="speakers-grid">
+            <article class="speaker">
+              <img
+                src="d12c5756-c301-445f-a2c7-17ce6d26ab0e.jpg"
+                alt="Joo-Yup Lee"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Joo-Yup Lee</h4>
+                <p class="role" data-i18n="speaker1_1">
+                  Историк Центральной Евразии и тюркского мира
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="POUJOL%282%29.jpg"
+                alt="Catherine Poujol"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Catherine Poujol</h4>
+                <p class="role" data-i18n="speaker1_2">
+                  Историк Центральной Азии, профессор INALCO
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="assets/speakers/marie-favereau.jpg"
+                alt="Marie Favereau"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Marie Favereau</h4>
+                <p class="role" data-i18n="speaker1_3">
+                  Историк Золотой Орды и кочевых империй
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="assets/speakers/peter-finke.jpg"
+                alt="Peter Finke"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Peter Finke</h4>
+                <p class="role" data-i18n="speaker1_4">
+                  Профессор социальной антропологии, University of Zurich
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="assets/speakers/mark-ingham.jpg"
+                alt="Mark Ingham"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Mark Ingham</h4>
+                <p class="role" data-i18n="speaker1_5">
+                  Исследователь критической педагогики, University of the Arts
+                  London
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="images-3.jpeg"
+                alt="Зира Наурызбаева"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Зира Наурызбаева</h4>
+                <p class="role" data-i18n="speaker1_6">
+                  Культуролог, профессор практики AlmaU
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="2-26-1536x932.jpg"
+                alt="Айнаш Мустаяпова"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Айнаш Мустаяпова</h4>
+                <p class="role" data-i18n="speaker1_7">
+                  Исследователь кочевой цивилизации и культурного наследия
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="speaker-group" aria-labelledby="group-2-title">
+          <div class="speaker-group-heading">
+            <h3 id="group-2-title" data-i18n="group2">Категория 2</h3>
+            <span class="speaker-count">02 / 02</span>
+          </div>
+          <div class="speakers-grid">
+            <article class="speaker">
+              <img
+                src="WhatsApp%20Image%202026-09-20%20at%2011.46.21.jpeg"
+                alt="Pascal Taranto"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Pascal Taranto</h4>
+                <p class="role" data-i18n="speaker2_1">
+                  Профессор философии, Aix-Marseille Université
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="assets/speakers/pamela-leung.jpg"
+                alt="Pui Wan Pamela Leung"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Pui Wan Pamela Leung</h4>
+                <p class="role" data-i18n="speaker2_2">
+                  Профессор китайского языка, The Education University of Hong
+                  Kong
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="assets/speakers/shumaila-yousafzai.jpg"
+                alt="Shumaila Yousafzai"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Shumaila Yousafzai</h4>
+                <p class="role" data-i18n="speaker2_3">
+                  Профессор предпринимательства, Nazarbayev University
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="assets/speakers/asmita-dani.webp"
+                alt="Асмита Дани"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Асмита Дани</h4>
+                <p class="role" data-i18n="speaker2_4">
+                  Руководитель академических программ, Symbiosis International
+                  University
+                </p>
+              </div>
+            </article>
+            <article class="speaker">
+              <img
+                src="erica%20kaufman%20headshot.jpg"
+                alt="Erica Kaufman"
+                decoding="async"
+              />
+              <div>
+                <h4 translate="no">Erica Kaufman</h4>
+                <p class="role" data-i18n="speaker2_5">
+                  Представитель Bard College, эксперт в области Liberal Arts
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
       <section class="page" id="program">
         <h2 data-i18n="t34">Два дня диалога</h2>
-        <div class="grid two">
-          <article>
-            <span data-i18n="t35">ДЕНЬ 1</span>
-            <h3 data-i18n="t36">30 октября</h3>
-            <a
-              class="program-link"
-              href="https://almau-tolyq-adam-2026.cool-fir-0718.chatgpt.site/#program"
-              ><span data-i18n="t37">Смотреть программу ↗</span></a
-            >
-          </article>
-          <article>
-            <span data-i18n="t38">ДЕНЬ 2</span>
-            <h3 data-i18n="t39">31 октября</h3>
-            <a
-              class="program-link"
-              href="https://almau-tolyq-adam-2026.cool-fir-0718.chatgpt.site/#program"
-              ><span data-i18n="t40">Смотреть программу ↗</span></a
-            >
-          </article>
+        <div class="program-summary">
+          <p data-i18n="programDates">30 и 31 октября 2026</p>
+          <a
+            class="cta"
+            href="https://almau-tolyq-adam-2026.cool-fir-0718.chatgpt.site/#program"
+            ><span data-i18n="programView"
+              >Смотреть программу двух дней ↗</span
+            ></a
+          >
         </div>
         <div class="actions">
           <a
@@ -1489,6 +1855,113 @@
           ru: "Оргкомитет",
           kz: "Ұйымдастыру комитеті",
           en: "Organising committee",
+        },
+        speakersLead: {
+          ru: "Люди, которые создают диалог",
+          kz: "Диалог құратын тұлғалар",
+          en: "The people shaping the dialogue",
+        },
+        speakersIntro: {
+          ru: "Два круга участников — разные исследовательские и образовательные взгляды на человека, культуру и университет будущего.",
+          kz: "Екі топ қатысушысы — адамға, мәдениетке және болашақ университетіне әртүрлі зерттеу және білім беру көзқарастары.",
+          en: "Two groups of participants bring different perspectives on people, culture and the university of the future.",
+        },
+        momentsKicker: {
+          ru: "Атмосфера AlmaU",
+          kz: "AlmaU атмосферасы",
+          en: "The AlmaU atmosphere",
+        },
+        momentsTitle: {
+          ru: "Место, где встречаются люди и идеи",
+          kz: "Адамдар мен идеялар тоғысатын орын",
+          en: "Where people and ideas meet",
+        },
+        momentsGathering: {
+          ru: "Участники встречи AlmaU и THE Awards Asia",
+          kz: "AlmaU және THE Awards Asia кездесуі қатысушылары",
+          en: "AlmaU and THE Awards Asia gathering",
+        },
+        momentsConference: {
+          ru: "Диалог на конференции AlmaU",
+          kz: "AlmaU конференциясындағы диалог",
+          en: "Dialogue at an AlmaU conference",
+        },
+        group1: { ru: "Категория 1", kz: "1-санат", en: "Category 1" },
+        speaker1_1: {
+          ru: "Историк Центральной Евразии и тюркского мира",
+          kz: "Орталық Еуразия мен түркі әлемінің тарихшысы",
+          en: "Historian of Central Eurasia and the Turkic world",
+        },
+        speaker1_2: {
+          ru: "Историк Центральной Азии, профессор INALCO",
+          kz: "Орталық Азия тарихшысы, INALCO профессоры",
+          en: "Historian of Central Asia, professor at INALCO",
+        },
+        speaker1_3: {
+          ru: "Историк Золотой Орды и кочевых империй",
+          kz: "Алтын Орда мен көшпелі империялар тарихшысы",
+          en: "Historian of the Golden Horde and nomadic empires",
+        },
+        speaker1_4: {
+          ru: "Профессор социальной антропологии, University of Zurich",
+          kz: "Әлеуметтік антропология профессоры, University of Zurich",
+          en: "Professor of Social Anthropology, University of Zurich",
+        },
+        speaker1_5: {
+          ru: "Исследователь критической педагогики, University of the Arts London",
+          kz: "Сыни педагогика зерттеушісі, University of the Arts London",
+          en: "Reader in Critical and Nomadic Pedagogies, University of the Arts London",
+        },
+        speaker1_6: {
+          ru: "Культуролог, профессор практики AlmaU",
+          kz: "Мәдениеттанушы, AlmaU практика профессоры",
+          en: "Cultural scholar and Professor of Practice at AlmaU",
+        },
+        speaker1_7: {
+          ru: "Исследователь кочевой цивилизации и культурного наследия",
+          kz: "Көшпелі өркениет пен мәдени мұраны зерттеуші",
+          en: "Researcher of nomadic civilization and cultural heritage",
+        },
+        group2: { ru: "Категория 2", kz: "2-санат", en: "Category 2" },
+        speaker2_1: {
+          ru: "Профессор философии, Aix-Marseille Université",
+          kz: "Философия профессоры, Aix-Marseille Université",
+          en: "Professor of Philosophy, Aix-Marseille Université",
+        },
+        speaker2_2: {
+          ru: "Профессор китайского языка, The Education University of Hong Kong",
+          kz: "Қытай тілі профессоры, The Education University of Hong Kong",
+          en: "Professor of Chinese Language Studies, The Education University of Hong Kong",
+        },
+        speaker2_3: {
+          ru: "Профессор предпринимательства, Nazarbayev University",
+          kz: "Кәсіпкерлік профессоры, Nazarbayev University",
+          en: "Professor of Entrepreneurship, Nazarbayev University",
+        },
+        speaker2_4: {
+          ru: "Руководитель академических программ, Symbiosis International University",
+          kz: "Академиялық бағдарламалар жетекшісі, Symbiosis International University",
+          en: "Academic leader, Symbiosis International University",
+        },
+        speaker2_5: {
+          ru: "Представитель Bard College, эксперт в области Liberal Arts",
+          kz: "Bard College өкілі, Liberal Arts білім беру сарапшысы",
+          en: "Bard College representative and Liberal Arts educator",
+        },
+        programButton: {
+          ru: "Программа двух дней ↓",
+          kz: "Екі күндік бағдарлама ↓",
+          en: "Two-day programme ↓",
+        },
+        programDates: {
+          ru: "30 и 31 октября 2026",
+          kz: "2026 жылғы 30 және 31 қазан",
+          en: "30 and 31 October 2026",
+        },
+        programView: {
+          ru: "Смотреть программу двух дней ↗",
+          kz: "Екі күндік бағдарламаны қарау ↗",
+          en: "View the two-day programme ↗",
         },
       };
       function setLanguage(lang, updateURL = true) {
