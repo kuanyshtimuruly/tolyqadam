@@ -1143,9 +1143,145 @@
           text-align: center;
         }
       }
+      /* Motion is progressive: content stays visible when scripts are unavailable. */
+      .scroll-progress {
+        position: fixed;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 3px;
+        background: var(--wine);
+        transform: scaleX(var(--scroll-progress, 0));
+        transform-origin: left;
+        z-index: 20;
+        pointer-events: none;
+      }
+      nav a {
+        position: relative;
+        padding-bottom: 5px;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background: var(--wine);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 250ms ease;
+      }
+      nav a:hover {
+        text-decoration: none;
+      }
+      nav a:hover::after,
+      nav a:focus-visible::after {
+        transform: scaleX(1);
+      }
+      .cta {
+        transition:
+          transform 260ms ease,
+          box-shadow 260ms ease,
+          background-color 260ms ease;
+      }
+      .cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(124, 44, 48, 0.18);
+      }
+      .speaker {
+        transition:
+          transform 320ms ease,
+          box-shadow 320ms ease,
+          border-color 320ms ease;
+      }
+      .speaker:hover {
+        transform: translateY(-6px);
+        border-color: #b9a470;
+        box-shadow: 0 18px 36px rgba(17, 53, 75, 0.09);
+      }
+      .speaker img {
+        transition: transform 500ms ease;
+      }
+      .speaker:hover img {
+        transform: scale(1.045);
+      }
+      .moments .photo-frame {
+        overflow: hidden;
+        border-radius: 24px;
+      }
+      .moments .photo-frame img {
+        border-radius: 0;
+        transition: transform 750ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .moments figure:hover img {
+        transform: scale(1.055);
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .motion-ready .hero-copy {
+          animation: rise-in 800ms both;
+        }
+        .motion-ready .hero-visual {
+          animation: rise-in 900ms 120ms both;
+        }
+        .motion-ready .reveal {
+          opacity: 0;
+          transform: translateY(28px);
+          transition:
+            opacity 700ms ease var(--reveal-delay, 0ms),
+            transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1)
+              var(--reveal-delay, 0ms);
+        }
+        .motion-ready .reveal.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .motion-ready .speaker.reveal.is-visible:hover {
+          transform: translateY(-6px);
+        }
+        .art .abai {
+          transform: translate3d(0, var(--abai-shift, 0px), 0);
+          will-change: transform;
+        }
+        .art .gold {
+          transform: translate(20px, calc(24px + var(--gold-shift, 0px)))
+            rotate(35deg) scale(0.75);
+          will-change: transform;
+        }
+        @keyframes rise-in {
+          from {
+            opacity: 0;
+            transform: translateY(32px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cta,
+        .speaker,
+        .speaker img,
+        .moments .photo-frame img,
+        nav a::after {
+          transition: none;
+        }
+        .cta:hover,
+        .speaker:hover,
+        .speaker:hover img,
+        .moments figure:hover img {
+          transform: none;
+        }
+      }
+      @media print {
+        .scroll-progress {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <main>
       <section class="page" id="home">
         <header>
@@ -1201,8 +1337,10 @@
               Наследие Великой степи и современные решения
             </p>
             <div class="hero-actions">
-              <a class="cta" href="#"
-                ><span data-i18n="t6">Зарегистрироваться ↗</span></a
+              <a
+                class="cta"
+                href="mailto:icth@almau.edu.kz?subject=TOLYQ%20ADAM%202026%20participation"
+                ><span data-i18n="t6">Связаться с оргкомитетом ↗</span></a
               >
               <a class="cta cta-outline" href="#program"
                 ><span data-i18n="programButton">Программа двух дней ↓</span></a
@@ -1252,9 +1390,6 @@
             <h3 data-i18n="t12">
               Как университет может стать средой становления целостной личности?
             </h3>
-            <a class="cta" href="#"
-              ><span data-i18n="t13">Зарегистрироваться ↗</span></a
-            >
           </div>
         </div>
       </section>
@@ -1265,21 +1400,25 @@
         <h2 data-i18n="momentsTitle">Место, где встречаются люди и идеи</h2>
         <div class="moments-grid">
           <figure>
-            <img
-              src="assets/events/almau-awards-gathering.jpg"
-              alt="Участники встречи AlmaU и THE Awards Asia"
-              decoding="async"
-            />
+            <div class="photo-frame">
+              <img
+                src="assets/events/almau-awards-gathering.jpg"
+                alt="Участники встречи AlmaU и THE Awards Asia"
+                decoding="async"
+              />
+            </div>
             <figcaption data-i18n="momentsGathering">
               Участники встречи AlmaU и THE Awards Asia
             </figcaption>
           </figure>
           <figure>
-            <img
-              src="assets/events/almau-conference.jpg"
-              alt="Участники конференции в AlmaU"
-              decoding="async"
-            />
+            <div class="photo-frame">
+              <img
+                src="assets/events/almau-conference.jpg"
+                alt="Участники конференции в AlmaU"
+                decoding="async"
+              />
+            </div>
             <figcaption data-i18n="momentsConference">
               Диалог на конференции AlmaU
             </figcaption>
@@ -1488,17 +1627,12 @@
         <h2 data-i18n="t34">Два дня диалога</h2>
         <div class="program-summary">
           <p data-i18n="programDates">30 и 31 октября 2026</p>
-          <a class="cta" href="#program"
+          <a
+            class="cta"
+            href="mailto:icth@almau.edu.kz?subject=TOLYQ%20ADAM%202026%20programme"
             ><span data-i18n="programView"
-              >Смотреть программу двух дней ↗</span
+              >Запросить программу двух дней ↗</span
             ></a
-          >
-        </div>
-        <div class="actions">
-          <a class="cta" href="#"
-            ><span data-i18n="t41">Зарегистрироваться ↗</span></a
-          ><a href="#"
-            ><span data-i18n="t42">Концепция конференции · PDF ↗</span></a
           >
         </div>
       </section>
@@ -1540,10 +1674,10 @@
               Каким должен быть университет, который развивает не только
               профессионала, но и человека?
             </h3>
-            <a class="cta" href="#"
-              ><span data-i18n="t49">Зарегистрироваться ↗</span></a
-            ><br /><a class="archive" href="#"
-              ><span data-i18n="t50">Архив конференции 2025 ↗</span></a
+            <a
+              class="cta"
+              href="mailto:icth@almau.edu.kz?subject=TOLYQ%20ADAM%202026%20participation"
+              ><span data-i18n="t49">Связаться с оргкомитетом ↗</span></a
             >
           </div>
           <div class="contact">
@@ -1575,7 +1709,7 @@
               /><a
                 class="social-pill"
                 translate="no"
-                href="https://www.instagram.com/ssth_almau?stkn=MWYxZjBmanV1dm00dQ=="
+                href="https://www.instagram.com/ssth_almau/"
                 target="_blank"
                 rel="noopener noreferrer"
                 ><span aria-hidden="true">🔗</span>SSTH</a
@@ -1591,7 +1725,7 @@
               /><a
                 class="social-pill"
                 translate="no"
-                href="https://www.instagram.com/tolyq_adam_almau?stkn=czdwYmFjOTduc3V1"
+                href="https://www.instagram.com/tolyq_adam_almau/"
                 target="_blank"
                 rel="noopener noreferrer"
                 ><span aria-hidden="true">🔗</span>Tolyq Adam</a
@@ -1599,7 +1733,13 @@
             </div>
           </div>
         </div>
-        <footer class="footer" translate="no">ALMAU – TOLYQ ADAM 2026</footer>
+        <footer class="footer">
+          <span translate="no">ALMAU – TOLYQ ADAM 2026</span>
+          <span aria-hidden="true"> · </span>
+          <a href="https://almau.edu.kz/ru/" data-i18n="officialSite"
+            >Официальный сайт AlmaU</a
+          >
+        </footer>
       </section>
     </main>
     <script>
@@ -1618,7 +1758,11 @@
           kz: "Ұлы дала мұрасы және заманауи шешімдер",
           en: "The Heritage of the Great Steppe and Contemporary Solutions",
         },
-        t6: { ru: "Зарегистрироваться ↗", kz: "Тіркелу ↗", en: "Register ↗" },
+        t6: {
+          ru: "Связаться с оргкомитетом ↗",
+          kz: "Ұйымдастыру комитетіне жазу ↗",
+          en: "Contact the organising team ↗",
+        },
         t7: {
           ru: "30–31 октября 2026 · Алматы, Казахстан",
           kz: "2026 жылғы 30–31 қазан · Алматы, Қазақстан",
@@ -1649,7 +1793,6 @@
           kz: "Университет тұтас тұлғаның қалыптасу ортасына қалай айнала алады?",
           en: "How can a university become an environment for the development of a whole person?",
         },
-        t13: { ru: "Зарегистрироваться ↗", kz: "Тіркелу ↗", en: "Register ↗" },
         t14: {
           ru: "Образовательная программа Tolyq Adam университета AlmaU стала победителем THE Awards Asia 2026 в номинации «Стратегия преподавания и обучения года».",
           kz: "AlmaU университетінің Tolyq Adam білім беру бағдарламасы THE Awards Asia 2026 байқауының «Жылдың оқыту және білім беру стратегиясы» номинациясында жеңімпаз атанды.",
@@ -1755,26 +1898,6 @@
           kz: "Екі күндік диалог",
           en: "Two days of dialogue",
         },
-        t35: { ru: "ДЕНЬ 1", kz: "1-КҮН", en: "DAY 1" },
-        t36: { ru: "30 октября", kz: "30 қазан", en: "30 October" },
-        t37: {
-          ru: "Смотреть программу ↗",
-          kz: "Бағдарламаны қарау ↗",
-          en: "View programme ↗",
-        },
-        t38: { ru: "ДЕНЬ 2", kz: "2-КҮН", en: "DAY 2" },
-        t39: { ru: "31 октября", kz: "31 қазан", en: "31 October" },
-        t40: {
-          ru: "Смотреть программу ↗",
-          kz: "Бағдарламаны қарау ↗",
-          en: "View programme ↗",
-        },
-        t41: { ru: "Зарегистрироваться ↗", kz: "Тіркелу ↗", en: "Register ↗" },
-        t42: {
-          ru: "Концепция конференции · PDF ↗",
-          kz: "Конференция тұжырымдамасы · PDF ↗",
-          en: "Conference concept · PDF ↗",
-        },
         t43: {
           ru: "Алматы, Казахстан",
           kz: "Алматы, Қазақстан",
@@ -1801,11 +1924,10 @@
           kz: "Тек маманды ғана емес, адамды да дамытатын университет қандай болуы керек?",
           en: "What should a university be like if it develops not only the professional, but also the person?",
         },
-        t49: { ru: "Зарегистрироваться ↗", kz: "Тіркелу ↗", en: "Register ↗" },
-        t50: {
-          ru: "Архив конференции 2025 ↗",
-          kz: "2025 жылғы конференция мұрағаты ↗",
-          en: "2025 conference archive ↗",
+        t49: {
+          ru: "Связаться с оргкомитетом ↗",
+          kz: "Ұйымдастыру комитетіне жазу ↗",
+          en: "Contact the organising team ↗",
         },
         t51: {
           ru: "Оргкомитет",
@@ -1913,9 +2035,14 @@
           en: "30 and 31 October 2026",
         },
         programView: {
-          ru: "Смотреть программу двух дней ↗",
-          kz: "Екі күндік бағдарламаны қарау ↗",
-          en: "View the two-day programme ↗",
+          ru: "Запросить программу двух дней ↗",
+          kz: "Екі күндік бағдарламаны сұрау ↗",
+          en: "Request the two-day programme ↗",
+        },
+        officialSite: {
+          ru: "Официальный сайт AlmaU",
+          kz: "AlmaU ресми сайты",
+          en: "Official AlmaU website",
         },
       };
       function setLanguage(lang, updateURL = true) {
@@ -1929,11 +2056,6 @@
           .forEach((el) =>
             el.setAttribute("aria-pressed", String(el.dataset.lang === lang)),
           );
-        document.querySelectorAll("[data-external-lang]").forEach((el) => {
-          const u = new URL(el.href);
-          u.searchParams.set("lang", lang);
-          el.href = u.href;
-        });
         if (updateURL) {
           const u = new URL(location.href);
           u.searchParams.set("lang", lang);
@@ -1959,6 +2081,74 @@
           false,
         ),
       );
+
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      const art = document.querySelector(".art");
+      const progress = document.querySelector(".scroll-progress");
+
+      if (!reducedMotion.matches && "IntersectionObserver" in window) {
+        const revealTargets = document.querySelectorAll(
+          "#about > h2, #about .split > *, #moments .section-kicker, #moments h2, #moments figure, #award .award-row > *, #speakers > .section-kicker, #speakers > h2, #speakers > .speakers-intro, #speakers .speaker, #program > *, #venue > *, #contacts > *",
+        );
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -5% 0px" },
+        );
+
+        revealTargets.forEach((element, index) => {
+          if (element.classList.contains("speaker")) {
+            element.style.setProperty(
+              "--reveal-delay",
+              `${(index % 4) * 65}ms`,
+            );
+          }
+          element.classList.add("reveal");
+          observer.observe(element);
+        });
+        document.documentElement.classList.add("motion-ready");
+      }
+
+      let scrollFrame = 0;
+      function updateScrollEffects() {
+        scrollFrame = 0;
+        const maxScroll = document.documentElement.scrollHeight - innerHeight;
+        progress.style.setProperty(
+          "--scroll-progress",
+          maxScroll > 0 ? Math.min(1, scrollY / maxScroll) : 0,
+        );
+
+        if (reducedMotion.matches || innerWidth < 800) return;
+        const bounds = art.getBoundingClientRect();
+        const distance = Math.max(
+          -300,
+          Math.min(300, innerHeight / 2 - (bounds.top + bounds.height / 2)),
+        );
+        art.style.setProperty(
+          "--abai-shift",
+          `${(distance * 0.12).toFixed(1)}px`,
+        );
+        art.style.setProperty(
+          "--gold-shift",
+          `${(distance * -0.08).toFixed(1)}px`,
+        );
+      }
+      function scheduleScrollEffects() {
+        if (!scrollFrame)
+          scrollFrame = requestAnimationFrame(updateScrollEffects);
+      }
+      window.addEventListener("scroll", scheduleScrollEffects, {
+        passive: true,
+      });
+      window.addEventListener("resize", scheduleScrollEffects);
+      scheduleScrollEffects();
     </script>
   </body>
 </html>
