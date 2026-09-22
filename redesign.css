@@ -114,8 +114,9 @@ nav a { color: var(--cream); }
 #speakers { background: var(--stage); }
 #speakers > h2 { max-width: 1150px; margin: 0 0 64px; }
 #speakers .speaker-group + .speaker-group { margin-top: 76px; padding-top: 70px; border-top-color: rgba(251,250,247,.24); }
-#speakers .speakers-grid, #speakers .speaker-group:last-child .speakers-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 30px 20px; }
-#speakers .speaker { display: block; padding: 0; min-width: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+/* Flex rather than grid so a short last row (three cards, or one) sits centred. */
+#speakers .speakers-grid, #speakers .speaker-group:last-child .speakers-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px 20px; }
+#speakers .speaker { display: block; flex: 0 0 calc((100% - 60px) / 4); padding: 0; min-width: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 #speakers .speaker:nth-child(even) { transform: translateY(38px); }
 #speakers .speaker:nth-child(even):hover { transform: translateY(30px); }
 #speakers .speaker img { width: 100%; height: auto; aspect-ratio: .83; max-width: none; object-fit: cover; object-position: center 22%; margin: 0 0 18px; border: 0; border-radius: 30px; background: var(--stage-card); }
@@ -158,7 +159,7 @@ footer { background: var(--stage); color: #c1d0d6; border-top: 1px solid rgba(25
   .header-controls { width: 100%; justify-content: space-between; }
   #home .hero { grid-template-columns: 1fr .7fr; padding-top: 80px; }
   .hero h1 { font-size: clamp(80px, 10vw, 120px); }
-  #speakers .speakers-grid, #speakers .speaker-group:last-child .speakers-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #speakers .speaker { flex-basis: calc((100% - 40px) / 3); }
 }
 @media (max-width: 700px) {
   .page { padding: 72px 22px; }
@@ -193,7 +194,8 @@ footer { background: var(--stage); color: #c1d0d6; border-top: 1px solid rgba(25
   #moments .moments-grid { grid-template-columns: 1fr; gap: 30px; }
   #moments figure img { height: auto; aspect-ratio: 1.45; }
   #moments .concept { grid-template-columns: 1fr; }
-  #speakers .speakers-grid, #speakers .speaker-group:last-child .speakers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 14px; }
+  #speakers .speakers-grid, #speakers .speaker-group:last-child .speakers-grid { gap: 34px 14px; }
+  #speakers .speaker { flex-basis: calc((100% - 14px) / 2); }
   #speakers .speaker:nth-child(even) { transform: translateY(20px); }
   #speakers .speaker:nth-child(even):hover { transform: translateY(14px); }
   #speakers .speaker img { aspect-ratio: .8; }
@@ -205,7 +207,7 @@ footer { background: var(--stage); color: #c1d0d6; border-top: 1px solid rgba(25
    (390-430px) stay on two columns so the section does not run 7000px long. */
 @media (max-width: 359px) {
   .hero h1 { font-size: 66px; }
-  #speakers .speakers-grid, #speakers .speaker-group:last-child .speakers-grid { grid-template-columns: 1fr; }
+  #speakers .speaker { flex-basis: 100%; }
   #speakers .speaker:nth-child(even) { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
