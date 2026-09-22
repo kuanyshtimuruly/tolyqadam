@@ -1315,20 +1315,30 @@
             TOLYQ <strong>ADAM</strong><span>2026</span>
           </a>
           <div class="header-controls">
-            <nav aria-label="Навигация">
+            <nav id="site-nav" aria-label="Навигация">
               <a href="#about"><span data-i18n="t0">О нас</span></a
               ><a href="#speakers"><span data-i18n="t1">Спикеры</span></a
               ><a href="#program"><span data-i18n="t2">Программа</span></a
               ><a href="#contacts"><span data-i18n="t3">Контакты</span></a>
             </nav>
             <div class="languages" role="group" aria-label="Language">
-              <button type="button" data-lang="en" aria-pressed="false">EN</button
+              <button type="button" data-lang="en" aria-pressed="false">
+                EN</button
               ><button type="button" data-lang="kz" aria-pressed="false">
                 KZ</button
               ><button type="button" data-lang="ru" aria-pressed="true">
                 RU
               </button>
             </div>
+            <button
+              type="button"
+              class="nav-toggle"
+              aria-controls="site-nav"
+              aria-expanded="false"
+              aria-label="Меню"
+            >
+              <span aria-hidden="true"></span>
+            </button>
           </div>
         </header>
         <div class="hero">
@@ -1381,8 +1391,9 @@
       </section>
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          TOLYQ ADAM <span>✦</span> ЧЕЛОВЕК <span>✦</span> УНИВЕРСИТЕТ БУДУЩЕГО <span>✦</span>
-          TOLYQ ADAM <span>✦</span> ЧЕЛОВЕК <span>✦</span> УНИВЕРСИТЕТ БУДУЩЕГО <span>✦</span>
+          TOLYQ ADAM <span>✦</span> ЧЕЛОВЕК <span>✦</span> УНИВЕРСИТЕТ БУДУЩЕГО
+          <span>✦</span> TOLYQ ADAM <span>✦</span> ЧЕЛОВЕК
+          <span>✦</span> УНИВЕРСИТЕТ БУДУЩЕГО <span>✦</span>
         </div>
       </div>
       <section class="page" id="about">
@@ -1391,10 +1402,11 @@
           <div>
             <h3 data-i18n="t9">Уважаемые коллеги и друзья!</h3>
             <p data-i18n="t10">
-              Almaty Management University приглашает вас 30–31 октября 2026 года в Алматы на международную
-              конференцию ALMAU – TOLYQ ADAM 2026. Это пространство
-              академического и профессионального диалога о миссии университета в
-              условиях технологических, социальных и культурных изменений.
+              Almaty Management University приглашает вас 30–31 октября 2026
+              года в Алматы на международную конференцию ALMAU – TOLYQ ADAM
+              2026. Это пространство академического и профессионального диалога
+              о миссии университета в условиях технологических, социальных и
+              культурных изменений.
             </p>
           </div>
           <div class="quote">
@@ -1413,12 +1425,20 @@
         <div class="moments-grid">
           <figure>
             <div class="photo-frame">
-              <img
-                src="assets/events/almau-awards-gathering.jpg"
-                alt="Участники встречи AlmaU и THE Awards Asia"
-                decoding="async"
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  srcset="assets/events/almau-awards-gathering.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/events/almau-awards-gathering.jpg"
+                  width="1800"
+                  height="1146"
+                  alt="Участники встречи AlmaU и THE Awards Asia"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <figcaption data-i18n="momentsGathering">
               Участники встречи AlmaU и THE Awards Asia
@@ -1426,12 +1446,20 @@
           </figure>
           <figure>
             <div class="photo-frame">
-              <img
-                src="assets/events/almau-conference.jpg"
-                alt="Участники конференции в AlmaU"
-                decoding="async"
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  srcset="assets/events/almau-conference.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/events/almau-conference.jpg"
+                  width="1800"
+                  height="1152"
+                  alt="Участники конференции в AlmaU"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <figcaption data-i18n="momentsConference">
               Диалог на конференции AlmaU
@@ -1439,12 +1467,20 @@
           </figure>
           <figure>
             <div class="photo-frame">
-              <img
-                src="IMG_5416.JPG"
-                alt="Панельная дискуссия на международной конференции AlmaU"
-                decoding="async"
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  srcset="assets/events/almau-panel.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/events/almau-panel.jpg"
+                  width="1800"
+                  height="1200"
+                  alt="Панельная дискуссия на международной конференции AlmaU"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <figcaption data-i18n="momentsPanel">
               Международная дискуссия в AlmaU
@@ -1452,12 +1488,20 @@
           </figure>
           <figure>
             <div class="photo-frame">
-              <img
-                src="IMG_1937.JPG"
-                alt="Участники слушают панельную дискуссию в AlmaU"
-                decoding="async"
-                loading="lazy"
-              />
+              <picture>
+                <source
+                  srcset="assets/events/almau-audience.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/events/almau-audience.jpg"
+                  width="1800"
+                  height="1200"
+                  alt="Участники слушают панельную дискуссию в AlmaU"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <figcaption data-i18n="momentsAudience">
               Участники конференции AlmaU
@@ -1468,13 +1512,19 @@
       <section class="page" id="award">
         <div class="split award-row">
           <div>
-            <img
-              src="assets/awards-winner.jpg"
-              alt="Almaty Management University — THE Awards Asia 2026, Teaching and Learning Strategy of the Year"
-              class="award-image"
-              style=""
-              decoding="async"
-            />
+            <picture>
+              <source srcset="assets/awards-winner.webp" type="image/webp" />
+              <img
+                src="assets/awards-winner.jpg"
+                width="1000"
+                height="1000"
+                alt="Almaty Management University — THE Awards Asia 2026, Teaching and Learning Strategy of the Year"
+                class="award-image"
+                style=""
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="award-copy">
             <h2>Teaching and Learning<br />Strategy of the Year</h2>
@@ -1499,7 +1549,7 @@
           <div class="speakers-grid">
             <article class="speaker">
               <img
-                src="d12c5756-c301-445f-a2c7-17ce6d26ab0e.jpg"
+                src="assets/speakers/joo-yup-lee.jpg"
                 alt="Joo-Yup Lee"
                 decoding="async"
               />
@@ -1512,7 +1562,7 @@
             </article>
             <article class="speaker">
               <img
-                src="POUJOL%282%29.jpg"
+                src="assets/speakers/catherine-poujol.jpg"
                 alt="Catherine Poujol"
                 decoding="async"
               />
@@ -1565,7 +1615,7 @@
             </article>
             <article class="speaker">
               <img
-                src="images-3.jpeg"
+                src="assets/speakers/zira-nauryzbayeva.jpg"
                 alt="Зира Наурызбаева"
                 decoding="async"
               />
@@ -1578,7 +1628,7 @@
             </article>
             <article class="speaker">
               <img
-                src="2-26-1536x932.jpg"
+                src="assets/speakers/ainash-mustayapova.jpg"
                 alt="Айнаш Мустаяпова"
                 decoding="async"
               />
@@ -1595,7 +1645,7 @@
           <div class="speakers-grid">
             <article class="speaker">
               <img
-                src="WhatsApp%20Image%202026-09-20%20at%2011.46.21.jpeg"
+                src="assets/speakers/pascal-taranto.jpg"
                 alt="Pascal Taranto"
                 decoding="async"
               />
@@ -1649,7 +1699,7 @@
             </article>
             <article class="speaker">
               <img
-                src="erica%20kaufman%20headshot.jpg"
+                src="assets/speakers/erica-kaufman.jpg"
                 alt="Erica Kaufman"
                 decoding="async"
               />
@@ -1697,13 +1747,22 @@
               ><span data-i18n="t46">Открыть карту ↗</span></a
             >
           </div>
-          <img
-            src="WhatsApp%20Image%202026-09-20%20at%2010.30.25.jpeg"
-            alt="Almaty Management University"
-            class="venue-photo"
-            style=""
-            decoding="async"
-          />
+          <picture>
+            <source
+              srcset="assets/venue/almau-building.webp"
+              type="image/webp"
+            />
+            <img
+              src="assets/venue/almau-building.jpg"
+              width="1184"
+              height="864"
+              alt="Almaty Management University"
+              class="venue-photo"
+              style=""
+              decoding="async"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </section>
       <section class="page" id="contacts">
@@ -2131,6 +2190,34 @@
           false,
         ),
       );
+
+      const siteHeader = document.querySelector("#home header");
+      const navToggle = document.querySelector(".nav-toggle");
+      const siteNav = document.getElementById("site-nav");
+
+      function setNavOpen(open) {
+        siteHeader.classList.toggle("nav-open", open);
+        navToggle.setAttribute("aria-expanded", String(open));
+      }
+      navToggle.addEventListener("click", () =>
+        setNavOpen(navToggle.getAttribute("aria-expanded") !== "true"),
+      );
+      siteNav.addEventListener("click", (event) => {
+        if (event.target.closest("a")) setNavOpen(false);
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        if (navToggle.getAttribute("aria-expanded") !== "true") return;
+        setNavOpen(false);
+        navToggle.focus();
+      });
+      // The burger only exists on narrow screens; leaving that range must not
+      // strand the header in its open state.
+      window
+        .matchMedia("(min-width: 701px)")
+        .addEventListener("change", (event) => {
+          if (event.matches) setNavOpen(false);
+        });
 
       const reducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",

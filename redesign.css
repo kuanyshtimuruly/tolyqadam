@@ -23,9 +23,29 @@ p { font-size: clamp(17px, 1.45vw, 21px); }
 .cta-outline:hover { background: rgba(255,210,38,.13); color: var(--cream); }
 a:focus-visible, button:focus-visible { outline-color: var(--accent); }
 
+/* A <picture> must not become a layout box of its own, so the <img> stays the
+   grid/flex item its parent expects. That promotes the sibling <source> to an
+   item too, hence the second rule. */
+picture { display: contents; }
+picture source { display: none; }
+/* The width/height attributes on <img> reserve space before the file loads, but
+   they also act as presentational hints: without this, an image sized by CSS
+   width alone would take its pixel height from the attribute. */
+img { height: auto; }
+
+/* Burger button: hidden on desktop, where the nav sits inline in the header. */
+.nav-toggle { display: none; width: 42px; height: 42px; padding: 0; align-items: center; justify-content: center; border: 1px solid rgba(251,250,247,.3); border-radius: 8px; background: transparent; }
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after { content: ""; display: block; width: 20px; height: 2px; background: var(--cream); transition: transform .22s ease, opacity .22s ease; }
+.nav-toggle span::before { position: absolute; transform: translateY(-6px); }
+.nav-toggle span::after { position: absolute; transform: translateY(6px); }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after { transform: rotate(-45deg); }
+
 /* Full screen opening: a live event scene behind Abai's line portrait. */
 #home { position: relative; width: 100%; min-height: min(900px, 100svh); isolation: isolate; background: var(--stage); }
 #home::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(41,26,37,.98) 0%, rgba(41,26,37,.87) 42%, rgba(41,26,37,.48) 100%), linear-gradient(0deg, var(--stage), transparent 35%), url("assets/events/almau-conference.jpg") center / cover; }
+#home::before { background: linear-gradient(90deg, rgba(41,26,37,.98) 0%, rgba(41,26,37,.87) 42%, rgba(41,26,37,.48) 100%), linear-gradient(0deg, var(--stage), transparent 35%), image-set(url("assets/events/almau-conference.webp") type("image/webp"), url("assets/events/almau-conference.jpg") type("image/jpeg")) center / cover; }
 #home::after { content: ""; position: absolute; inset: auto 0 0; height: 150px; z-index: -1; background: linear-gradient(transparent, var(--stage)); }
 #home header { width: min(100%, 1600px); min-height: 88px; padding: 18px clamp(24px, 5vw, 80px); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 34px; border-bottom: 1px solid rgba(251,250,247,.17); }
 .brand { flex: none; display: inline-flex; align-items: baseline; gap: .3em; font-size: clamp(19px, 2vw, 27px); font-weight: 900; letter-spacing: -.055em; white-space: nowrap; }
@@ -135,13 +155,18 @@ footer { background: var(--stage); color: #c1d0d6; border-top: 1px solid rgba(25
 }
 @media (max-width: 700px) {
   .page { padding: 72px 22px; }
+  h2 { font-size: clamp(32px, 8.6vw, 52px); hyphens: auto; }
   #home { min-height: 0; }
-  #home header { padding: 20px 22px; gap: 18px; }
-  #home header { flex-direction: column; align-items: flex-start; }
-  .brand { font-size: 22px; }
-  .header-controls { flex-direction: column; align-items: flex-start; gap: 8px; }
-  nav { justify-content: flex-start; gap: 12px 18px; font-size: 11px; text-align: left; }
-  .languages { padding-left: 0; border-left: 0; }
+  #home header { position: relative; flex-direction: row; align-items: center; flex-wrap: nowrap; padding: 16px 22px; gap: 14px; }
+  .brand { font-size: 20px; }
+  .header-controls { width: auto; gap: 12px; }
+  .languages { padding-left: 12px; gap: 10px; }
+  /* The four links move into a panel that drops below the header bar. */
+  .nav-toggle { display: inline-flex; }
+  nav { position: absolute; top: 100%; left: 0; right: 0; z-index: 9; flex-direction: column; align-items: stretch; gap: 0; padding: 0 22px; font-size: 14px; background: var(--stage); border-bottom: 1px solid rgba(251,250,247,.17); max-height: 0; overflow: hidden; visibility: hidden; transition: max-height .25s ease, visibility 0s linear .25s; }
+  nav a { padding: 15px 0; border-bottom: 1px solid rgba(251,250,247,.12); }
+  nav a:last-child { border-bottom: 0; }
+  #home header.nav-open nav { max-height: 60vh; visibility: visible; padding-bottom: 8px; transition: max-height .25s ease, visibility 0s; }
   #home .hero { display: flex; flex-direction: column; min-height: 0; padding: 74px 22px 44px; align-items: stretch; }
   .hero-copy { width: 100%; min-width: 0; }
   .hero h1 { font-size: clamp(66px, 16vw, 96px); }
@@ -168,7 +193,9 @@ footer { background: var(--stage); color: #c1d0d6; border-top: 1px solid rgba(25
   #speakers .speaker .role { font-size: 12px; }
   #venue .venue-photo { min-height: 0; }
 }
-@media (max-width: 400px) {
+/* Below this the two speaker columns get too narrow to read; common phones
+   (390-430px) stay on two columns so the section does not run 7000px long. */
+@media (max-width: 359px) {
   .hero h1 { font-size: 66px; }
   #speakers .speakers-grid, #speakers .speaker-group:last-child .speakers-grid { grid-template-columns: 1fr; }
   #speakers .speaker:nth-child(even) { transform: none; }
