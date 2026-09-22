@@ -1304,7 +1304,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="redesign.css?v=9" />
+    <link rel="stylesheet" href="redesign.css?v=10" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -1340,6 +1340,8 @@
           <div class="header-controls">
             <nav id="site-nav" aria-label="Навигация">
               <a href="#about"><span data-i18n="t0">О нас</span></a
+              ><a href="#infoletter"
+                ><span data-i18n="navInfoLetter">Инфописьмо</span></a
               ><a href="#speakers"><span data-i18n="t1">Спикеры</span></a
               ><a href="#contacts"><span data-i18n="t3">Контакты</span></a>
             </nav>
@@ -1429,7 +1431,7 @@
               о миссии университета в условиях технологических, социальных и
               культурных изменений.
             </p>
-            <div class="infoletter">
+            <div class="infoletter" id="infoletter">
               <span data-i18n="infoLetter">Информационное письмо (PDF)</span>
               <a
                 href="assets/infoletters/tolyq-adam-2026-info-letter-en.pdf"
@@ -2209,6 +2211,11 @@
           ru: "Информационное письмо (PDF)",
           kz: "Ақпараттық хат (PDF)",
           en: "Information letter (PDF)",
+        },
+        navInfoLetter: {
+          ru: "Инфописьмо",
+          kz: "Ақпараттық хат",
+          en: "Info letter",
         },
       };
       function setLanguage(lang, updateURL = true) {
