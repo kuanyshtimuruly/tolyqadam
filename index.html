@@ -1304,7 +1304,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="redesign.css?v=4" />
+    <link rel="stylesheet" href="redesign.css?v=5" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"></div>
@@ -1318,7 +1318,6 @@
             <nav id="site-nav" aria-label="Навигация">
               <a href="#about"><span data-i18n="t0">О нас</span></a
               ><a href="#speakers"><span data-i18n="t1">Спикеры</span></a
-              ><a href="#program"><span data-i18n="t2">Программа</span></a
               ><a href="#contacts"><span data-i18n="t3">Контакты</span></a>
             </nav>
             <div class="languages" role="group" aria-label="Language">
@@ -1362,8 +1361,12 @@
                 href="mailto:icth@almau.edu.kz?subject=TOLYQ%20ADAM%202026%20participation"
                 ><span data-i18n="t6">Связаться с оргкомитетом ↗</span></a
               >
-              <a class="cta cta-outline" href="#program"
-                ><span data-i18n="programButton">Программа двух дней ↓</span></a
+              <a
+                class="cta cta-outline"
+                href="mailto:icth@almau.edu.kz?subject=TOLYQ%20ADAM%202026%20programme"
+                ><span data-i18n="programButton"
+                  >Программа конференции ↗</span
+                ></a
               >
             </div>
           </div>
@@ -1391,9 +1394,10 @@
       </section>
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          TOLYQ ADAM <span>✦</span> ЧЕЛОВЕК <span>✦</span> УНИВЕРСИТЕТ БУДУЩЕГО
-          <span>✦</span> TOLYQ ADAM <span>✦</span> ЧЕЛОВЕК
-          <span>✦</span> УНИВЕРСИТЕТ БУДУЩЕГО <span>✦</span>
+          TOLYQ ADAM <i>✦</i> <span data-i18n="marqueeA">ЧЕЛОВЕК</span> <i>✦</i>
+          <span data-i18n="marqueeB">УНИВЕРСИТЕТ БУДУЩЕГО</span> <i>✦</i> TOLYQ
+          ADAM <i>✦</i> <span data-i18n="marqueeA">ЧЕЛОВЕК</span> <i>✦</i>
+          <span data-i18n="marqueeB">УНИВЕРСИТЕТ БУДУЩЕГО</span> <i>✦</i>
         </div>
       </div>
       <section class="page" id="about">
@@ -1409,12 +1413,22 @@
               культурных изменений.
             </p>
           </div>
-          <div class="quote">
-            <span data-i18n="t11">НАСЛЕДИЕ × ЧЕЛОВЕК × БУДУЩЕЕ</span>
-            <h3 data-i18n="t12">
-              Как университет может стать средой становления целостной личности?
-            </h3>
-          </div>
+          <figure class="about-photo">
+            <picture>
+              <source
+                srcset="assets/events/almau-panel.webp"
+                type="image/webp"
+              />
+              <img
+                src="assets/events/almau-panel.jpg"
+                width="1800"
+                height="1200"
+                alt="Панельная дискуссия на международной конференции AlmaU"
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
+          </figure>
         </div>
       </section>
       <section class="page moments" id="moments">
@@ -1465,48 +1479,32 @@
               Диалог на конференции AlmaU
             </figcaption>
           </figure>
-          <figure>
-            <div class="photo-frame">
-              <picture>
-                <source
-                  srcset="assets/events/almau-panel.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="assets/events/almau-panel.jpg"
-                  width="1800"
-                  height="1200"
-                  alt="Панельная дискуссия на международной конференции AlmaU"
-                  decoding="async"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
-            <figcaption data-i18n="momentsPanel">
-              Международная дискуссия в AlmaU
-            </figcaption>
-          </figure>
-          <figure>
-            <div class="photo-frame">
-              <picture>
-                <source
-                  srcset="assets/events/almau-audience.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="assets/events/almau-audience.jpg"
-                  width="1800"
-                  height="1200"
-                  alt="Участники слушают панельную дискуссию в AlmaU"
-                  decoding="async"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
-            <figcaption data-i18n="momentsAudience">
-              Участники конференции AlmaU
-            </figcaption>
-          </figure>
+          <div class="concept">
+            <span class="section-kicker" data-i18n="conceptKicker"
+              >О конференции</span
+            >
+            <p data-i18n="conceptP1">
+              Международная конференция AlmaU – TOLYQ ADAM 2026 посвящена
+              презентации образовательной модели TOLYQ ADAM, реализуемой в
+              Almaty Management University с 2023 года. Основанная на философии
+              Абая о гармонии разума, сердца и воли, модель объединяет
+              взаимосвязанные дисциплины и образовательные практики,
+              направленные на целостное развитие личности студента — критическое
+              и творческое мышление, осознанный выбор, самоорганизацию,
+              эмоциональный интеллект, коммуникацию, командную работу,
+              социальную ответственность и культуру служения обществу.
+            </p>
+            <p data-i18n="conceptP2">
+              На конференции AlmaU впервые представит TOLYQ ADAM широкому
+              академическому сообществу как целостную образовательную модель —
+              её концептуальные основания, архитектуру, содержание, методические
+              подходы и опыт реализации. Презентация будет дополнена диалогом с
+              интеллектуальным наследием Великой степи и международными
+              практиками whole-person и holistic education, что позволит
+              обсудить, как развитие целостной личности может быть системно
+              встроено в университетское образование.
+            </p>
+          </div>
         </div>
       </section>
       <section class="page" id="award">
@@ -1713,19 +1711,6 @@
           </div>
         </div>
       </section>
-      <section class="page" id="program">
-        <h2 data-i18n="t34">Два дня диалога</h2>
-        <div class="program-summary">
-          <p data-i18n="programDates">30 и 31 октября 2026</p>
-          <a
-            class="cta"
-            href="mailto:icth@almau.edu.kz?subject=TOLYQ%20ADAM%202026%20programme"
-            ><span data-i18n="programView"
-              >Запросить программу двух дней ↗</span
-            ></a
-          >
-        </div>
-      </section>
       <section class="page venue" id="venue">
         <h2>Almaty Management University</h2>
         <div class="split">
@@ -1928,16 +1913,6 @@
           kz: "Almaty Management University сіздерді 2026 жылғы 30–31 қазанда Алматыда өтетін ALMAU – TOLYQ ADAM 2026 халықаралық конференциясына шақырады. Бұл — технологиялық, әлеуметтік және мәдени өзгерістер жағдайындағы университет миссиясы туралы академиялық және кәсіби диалог алаңы.",
           en: "Almaty Management University invites you to the ALMAU – TOLYQ ADAM 2026 international conference in Almaty on 30–31 October 2026. It is a space for academic and professional dialogue on the university’s mission amid technological, social and cultural change.",
         },
-        t11: {
-          ru: "НАСЛЕДИЕ × ЧЕЛОВЕК × БУДУЩЕЕ",
-          kz: "МҰРА × АДАМ × БОЛАШАҚ",
-          en: "HERITAGE × PERSON × FUTURE",
-        },
-        t12: {
-          ru: "Как университет может стать средой становления целостной личности?",
-          kz: "Университет тұтас тұлғаның қалыптасу ортасына қалай айнала алады?",
-          en: "How can a university become an environment for the development of a whole person?",
-        },
         t14: {
           ru: "Образовательная программа Tolyq Adam университета AlmaU стала победителем THE Awards Asia 2026 в номинации «Стратегия преподавания и обучения года».",
           kz: "AlmaU университетінің Tolyq Adam білім беру бағдарламасы THE Awards Asia 2026 байқауының «Жылдың оқыту және білім беру стратегиясы» номинациясында жеңімпаз атанды.",
@@ -2038,11 +2013,6 @@
           kz: "“Nomads: In Search of the Lost Path” (Springer) еңбегінің авторы",
           en: "Author of “Nomads: In Search of the Lost Path” (Springer)",
         },
-        t34: {
-          ru: "Два дня диалога",
-          kz: "Екі күндік диалог",
-          en: "Two days of dialogue",
-        },
         t43: {
           ru: "Алматы, Казахстан",
           kz: "Алматы, Қазақстан",
@@ -2109,16 +2079,6 @@
           kz: "AlmaU конференциясындағы диалог",
           en: "Dialogue at an AlmaU conference",
         },
-        momentsPanel: {
-          ru: "Международная дискуссия в AlmaU",
-          kz: "AlmaU-дағы халықаралық пікірталас",
-          en: "International discussion at AlmaU",
-        },
-        momentsAudience: {
-          ru: "Участники конференции AlmaU",
-          kz: "AlmaU конференциясының қатысушылары",
-          en: "Participants at the AlmaU conference",
-        },
         speaker1_1: {
           ru: "Историк Центральной Евразии и тюркского мира",
           kz: "Орталық Еуразия мен түркі әлемінің тарихшысы",
@@ -2180,19 +2140,30 @@
           en: "Bard College representative and Liberal Arts educator",
         },
         programButton: {
-          ru: "Программа двух дней ↓",
-          kz: "Екі күндік бағдарлама ↓",
-          en: "Two-day programme ↓",
+          ru: "Программа конференции ↗",
+          kz: "Конференция бағдарламасы ↗",
+          en: "Conference programme ↗",
         },
-        programDates: {
-          ru: "30 и 31 октября 2026",
-          kz: "2026 жылғы 30 және 31 қазан",
-          en: "30 and 31 October 2026",
+        marqueeA: { ru: "ЧЕЛОВЕК", kz: "ТОЛЫҚ АДАМ", en: "THE WHOLE PERSON" },
+        marqueeB: {
+          ru: "УНИВЕРСИТЕТ БУДУЩЕГО",
+          kz: "БОЛАШАҚ УНИВЕРСИТЕТІ",
+          en: "THE UNIVERSITY OF THE FUTURE",
         },
-        programView: {
-          ru: "Запросить программу двух дней ↗",
-          kz: "Екі күндік бағдарламаны сұрау ↗",
-          en: "Request the two-day programme ↗",
+        conceptKicker: {
+          ru: "О конференции",
+          kz: "Конференция туралы",
+          en: "About the conference",
+        },
+        conceptP1: {
+          ru: "Международная конференция AlmaU – TOLYQ ADAM 2026 посвящена презентации образовательной модели TOLYQ ADAM, реализуемой в Almaty Management University с 2023 года. Основанная на философии Абая о гармонии разума, сердца и воли, модель объединяет взаимосвязанные дисциплины и образовательные практики, направленные на целостное развитие личности студента — критическое и творческое мышление, осознанный выбор, самоорганизацию, эмоциональный интеллект, коммуникацию, командную работу, социальную ответственность и культуру служения обществу.",
+          kz: "AlmaU – TOLYQ ADAM 2026 халықаралық конференциясы 2023 жылдан бері Almaty Management University-де жүзеге асырылып келе жатқан TOLYQ ADAM білім беру моделін таныстыруға арналған. Абайдың ақыл, жүрек пен қайрат үйлесімі туралы философиясына негізделген бұл модель студент тұлғасын тұтас дамытуға бағытталған өзара байланысты пәндер мен білім беру тәжірибелерін біріктіреді. Оның мазмұны сыни және шығармашылық ойлауды, саналы таңдау мен өзін-өзі ұйымдастыруды, эмоционалдық зердені, коммуникацияны, командалық жұмысты, әлеуметтік жауапкершілікті және қоғамға қызмет ету мәдениетін дамытуға бағытталған.",
+          en: "The AlmaU – TOLYQ ADAM 2026 International Conference is dedicated to the presentation of the TOLYQ ADAM educational model, implemented at Almaty Management University since 2023. Inspired by Abai's philosophy of harmony between mind, heart and will, the model brings together interconnected courses and educational practices aimed at whole-person development, including critical and creative thinking, conscious choice, self-organization, emotional intelligence, communication, teamwork, social responsibility and a culture of service to society.",
+        },
+        conceptP2: {
+          ru: "На конференции AlmaU впервые представит TOLYQ ADAM широкому академическому сообществу как целостную образовательную модель — её концептуальные основания, архитектуру, содержание, методические подходы и опыт реализации. Презентация будет дополнена диалогом с интеллектуальным наследием Великой степи и международными практиками whole-person и holistic education, что позволит обсудить, как развитие целостной личности может быть системно встроено в университетское образование.",
+          kz: "Конференция аясында AlmaU TOLYQ ADAM моделін кең академиялық қауымдастыққа алғаш рет тұтас білім беру моделі ретінде ұсынады: оның тұжырымдамалық негіздері, архитектурасы, мазмұны, әдістемелік тәсілдері және іске асыру тәжірибесі таныстырылады. Бұл презентация Ұлы даланың интеллектуалдық мұрасы және whole-person мен holistic education бағытындағы халықаралық тәжірибелермен ұштасып, тұтас тұлғаны дамыту міндетін университеттік білімге жүйелі түрде енгізу жолдарын талқылауға мүмкіндік береді.",
+          en: "At the Conference, AlmaU will present TOLYQ ADAM to the wider academic community as a coherent educational model, including its conceptual foundations, architecture, content, methodological approaches and implementation experience. The presentation will be complemented by dialogue with the intellectual heritage of the Great Steppe and international practices in whole-person and holistic education, creating a platform to discuss how whole-person development can be systematically embedded in university education.",
         },
         officialSite: {
           ru: "Официальный сайт AlmaU",
@@ -2273,7 +2244,7 @@
 
       if (!reducedMotion.matches && "IntersectionObserver" in window) {
         const revealTargets = document.querySelectorAll(
-          "#about > h2, #about .split > *, #moments .section-kicker, #moments h2, #moments figure, #award .award-row > *, #speakers > .section-kicker, #speakers > h2, #speakers > .speakers-intro, #speakers .speaker, #program > *, #venue > *, #contacts > *",
+          "#about > h2, #about .split > *, #moments .section-kicker, #moments h2, #moments figure, #moments .concept, #award .award-row > *, #speakers > .section-kicker, #speakers > h2, #speakers > .speakers-intro, #speakers .speaker, #venue > *, #contacts > *",
         );
         const observer = new IntersectionObserver(
           (entries) => {
