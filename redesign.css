@@ -10,7 +10,7 @@
 html { scroll-padding-top: 24px; }
 body { background: var(--stage); color: var(--cream); overflow-x: hidden; }
 main { overflow: clip; }
-h1, h2, h3, h4, p, .eyebrow, .hero .subtitle { font-family: Arial, Helvetica, sans-serif; }
+h1, h2, h3, h4, p, .eyebrow, .hero .subtitle { font-family: Arimo, Arial, Helvetica, sans-serif; }
 h2 { font-size: clamp(44px, 6vw, 88px); line-height: .97; letter-spacing: -.055em; font-weight: 800; }
 h3 { font-weight: 700; }
 p { font-size: clamp(17px, 1.45vw, 21px); }
@@ -58,7 +58,7 @@ img { height: auto; }
 nav { gap: clamp(14px, 2vw, 30px); font-size: 13px; font-weight: 700; letter-spacing: .055em; text-transform: uppercase; }
 nav a { color: var(--cream); }
 .languages { border-left: 1px solid rgba(251,250,247,.3); padding-left: 20px; gap: 12px; }
-.languages button { color: var(--cream); font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 800; }
+.languages button { color: var(--cream); font-family: Arimo, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 800; }
 .languages button[aria-pressed="true"] { color: var(--accent); text-decoration: none; }
 #home .hero { width: min(100%, 1600px); min-height: 710px; margin: 0 auto; padding: clamp(75px, 10vw, 145px) clamp(24px, 7vw, 112px) 120px; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr); align-items: center; gap: 0; }
 .hero-copy { position: relative; z-index: 2; }
@@ -91,7 +91,7 @@ nav a { color: var(--cream); }
 #about p { max-width: 650px; color: #c2d0d6; }
 /* Download row for the invitation letter: label, then one chip per language. */
 #about .infoletter { scroll-margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 30px; }
-#about .infoletter span { margin-right: 6px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+#about .infoletter span { flex-basis: 100%; margin-right: 6px; color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 #about .infoletter a { padding: 9px 16px; border: 1.5px solid rgba(251,250,247,.4); border-radius: 6px; font-size: 14px; font-weight: 800; letter-spacing: .08em; color: var(--cream); transition: background .2s ease, border-color .2s ease, color .2s ease; }
 #about .infoletter a:hover { background: var(--accent); border-color: var(--accent); color: var(--stage); text-decoration: none; }
 #about .about-photo { margin: 0; min-height: 390px; border-radius: 12px; overflow: hidden; }
@@ -115,6 +115,9 @@ nav a { color: var(--cream); }
 #award .award-image { width: 100%; border-radius: 12px; box-shadow: 24px 24px 0 var(--wine); }
 #award h2 { color: var(--accent); font-size: clamp(43px, 5vw, 76px); }
 #award p { max-width: 600px; color: #d3dee2; }
+#award .award-group { margin: clamp(56px, 7vw, 96px) 0 0; }
+#award .award-group img { display: block; width: 100%; height: auto; border-radius: 12px; }
+#award .award-group figcaption { margin: 14px 2px 0; color: #afc2c9; font-size: 14px; font-weight: 700; letter-spacing: .02em; }
 
 #speakers { background: var(--stage); }
 #speakers > h2 { max-width: 1150px; margin: 0 0 64px; }
@@ -212,4 +215,14 @@ footer { background: var(--stage); color: #c1d0d6; border-top: 1px solid rgba(25
 }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track, .hero .art::before, .hero .art::after { animation: none; }
+}
+/* Phone-only photo viewer: a tap on a content photo opens it uncropped over a
+   dark backdrop; the script only opens it below 701px. */
+.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(8,14,18,.94); }
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 6px; }
+.lightbox button { position: absolute; top: 10px; right: 10px; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: rgba(251,250,247,.14); color: var(--cream); font-size: 28px; line-height: 44px; }
+html.lightbox-open { overflow: hidden; }
+@media (max-width: 700px) {
+  #about img, #moments img, #award img, #speakers img, #venue img { cursor: zoom-in; }
 }
